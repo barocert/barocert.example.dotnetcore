@@ -1,0 +1,15 @@
+﻿@{
+	ViewBag.Title = "서명 검증";
+}
+
+<div id="content">
+	<p class="heading1">Result</p>
+	<br />
+	<fieldset class="fieldset1">
+		<legend>@ViewData["Title"]</legend>
+		<ul>
+			<li>receiptId (접수아이디) : @Model.receiptId</li>
+			<li>signedData (전자서명 데이터 전문) : @Model.signedData</li>
+		</ul>
+	</fieldset>
+</div>

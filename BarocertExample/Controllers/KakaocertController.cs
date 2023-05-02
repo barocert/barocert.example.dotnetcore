@@ -166,7 +166,7 @@ namespace BarocertExample.Controllers
 		}
 
 		/**
-		* 본인인증 요청시 반환된 접수아이디를 통해 서명 상태를 확인합니다.
+		* 전자서명 요청시 반환된 접수아이디를 통해 서명 상태를 확인합니다.
 		*/
 		public IActionResult GetSignStatus()
 		{

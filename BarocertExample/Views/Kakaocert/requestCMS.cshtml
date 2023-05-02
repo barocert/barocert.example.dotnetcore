@@ -1,5 +1,5 @@
 ﻿@{
-	ViewBag.Title = "ReceiptID";
+	ViewBag.Title = "출금동의 서명요청";
 }
 
 <div id="content">
@@ -8,7 +8,8 @@
 	<fieldset class="fieldset1">
 		<legend>@ViewData["Title"]</legend>
 		<ul>
-			<li>ReceiptID (접수아이디) : @Model</li>
+            <li>ReceiptId (접수아이디) : @Model.receiptId</li>
+            <li>Scheme (앱스킴) : @Model.scheme</li>
 		</ul>
 	</fieldset>
 </div>

@@ -1,5 +1,5 @@
 ﻿@{
-	ViewBag.Title = "전자서명 요청(단건)";
+	ViewBag.Title = "전자서명 요청(복수)";
 }
 
 <div id="content">
@@ -9,7 +9,7 @@
 		<legend>@ViewData["Title"]</legend>
         <ul>
             <li>receiptId (접수아이디) : @Model.receiptId</li>
-            <li>scheme (앱스킴 [AppToApp 앱스킴 호출용]) : @Model.scheme</li>
+            <li>scheme (앱스킴) : @Model.scheme</li>
         </ul>
 	</fieldset>
 </div>

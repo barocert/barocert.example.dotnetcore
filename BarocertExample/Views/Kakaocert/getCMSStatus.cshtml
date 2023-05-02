@@ -1,5 +1,5 @@
 ﻿@{
-	ViewBag.Title = "전자서명 결과확인 (다건)";
+	ViewBag.Title = "출금동의 상태확인";
 }
 
 <div id="content">
@@ -9,7 +9,6 @@
 		<legend>@ViewData["Title"]</legend>
         <ul>
             <li>ReceiptID (접수 아이디) : @Model.receiptID</li>
-            <li>RequestID (요청 아이디) : @Model.requestID</li>
             <li>ClientCode (이용기관 코드) : @Model.clientCode</li>
             <li>State (상태코드) : @Model.state</li>
             <li>ExpireIn (요청 만료시간) : @Model.expireIn</li>
@@ -24,7 +23,7 @@
             <li>CompleteDT (서명완료일시) : @Model.completeDT</li>
             <li>ExpireDT (서명만료일시) : @Model.expireDT</li>
             <li>VerifyDT (서명검증일시) : @Model.verifyDT</li>
-            <li>Scheme (앱스킴 [AppToApp 앱스킴 호출용]) : @Model.scheme</li>
+            <li>Scheme (앱스킴) : @Model.scheme</li>
             <li>AppUseYN (앱사용유무) : @Model.appUseYN</li>
         </ul>
 	</fieldset>

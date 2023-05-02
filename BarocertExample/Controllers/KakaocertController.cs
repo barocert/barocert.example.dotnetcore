@@ -22,13 +22,10 @@ namespace BarocertExample.Controllers
 
 
 		/**
-        * 카카오톡 사용자에게 본인인증 전자서명을 요청합니다.
-        */
+		* 카카오톡 사용자에게 본인인증 전자서명을 요청합니다.
+		*/
 		public IActionResult RequestIdentity()
 		{
-			/**
-			* 카카오톡 사용자에게 본인인증 전자서명을 요청합니다.
-			*/
 
 			// Kakaocert 이용기관코드, Kakaocert 파트너 사이트에서 확인
 			String clientCode = "023040000001";
@@ -69,8 +66,8 @@ namespace BarocertExample.Controllers
 		}
 
 		/**
-        * 본인인증 요청시 반환된 접수아이디를 통해 서명 상태를 확인합니다.
-        */
+		* 본인인증 요청시 반환된 접수아이디를 통해 서명 상태를 확인합니다.
+		*/
 		public IActionResult GetIdentityStatus()
 		{
 
@@ -119,8 +116,8 @@ namespace BarocertExample.Controllers
 
 
 		/**
-        * 카카오톡 사용자에게 전자서명을 요청합니다.(단건)
-        */
+		* 카카오톡 사용자에게 전자서명을 요청합니다.(단건)
+		*/
 		public IActionResult RequestSign()
 		{
 
@@ -213,8 +210,8 @@ namespace BarocertExample.Controllers
 		}
 
 		/**
-        * 카카오톡 사용자에게 전자서명을 요청합니다.(복수)
-        */
+		* 카카오톡 사용자에게 전자서명을 요청합니다.(복수)
+		*/
 		public IActionResult RequestMultiSign()
 		{
 
@@ -276,8 +273,8 @@ namespace BarocertExample.Controllers
 		}
 
 		/**
-        * 전자서명 요청시 반환된 접수아이디를 통해 서명 상태를 확인합니다. (복수)
-        */
+		* 전자서명 요청시 반환된 접수아이디를 통해 서명 상태를 확인합니다. (복수)
+		*/
 		public IActionResult GetMultiSignStatus()
 		{
 

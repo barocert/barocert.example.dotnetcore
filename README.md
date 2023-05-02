@@ -1,4 +1,4 @@
-﻿# barocert.example.dotnetcore
+# barocert.example.dotnetcore
 
 
 ### Barocert API Example for ASP.NET Core

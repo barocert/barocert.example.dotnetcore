@@ -1,5 +1,5 @@
 ﻿@{
-	ViewBag.Title = "출금동의 서명검증";
+	ViewBag.Title = "자동이체 출금동의 서명검증";
 }
 
 <div id="content">
@@ -9,7 +9,6 @@
 		<legend>@ViewData["Title"]</legend>
         <ul>
             <li>ReceiptID (접수 아이디) : @Model.receiptID</li>
-            <li>RequestID (요청 아이디) : @Model.requestID</li>
             <li>State (상태) : @Model.state</li>
             <li>SignedData (전자서명 데이터 전문) : @Model.signedData</li>
             <li>Ci (연계정보) : @Model.ci</li>

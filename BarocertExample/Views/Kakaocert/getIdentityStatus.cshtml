@@ -1,5 +1,5 @@
 ﻿@{
-	ViewBag.Title = "본인인증 결과확인";
+	ViewBag.Title = "본인인증 서명상태 확인";
 }
 
 <div id="content">
@@ -9,7 +9,6 @@
 		<legend>@ViewData["Title"]</legend>
         <ul>
             <li>ReceiptID (접수 아이디) : @Model.receiptID</li>
-            <li>RequestID (요청 아이디) : @Model.requestID</li>
             <li>ClientCode (이용기관 코드) : @Model.clientCode</li>
             <li>State (상태코드) : @Model.state</li>
             <li>ExpireIn (요청 만료시간) : @Model.expireIn</li>
@@ -18,7 +17,6 @@
             <li>ReqTitle (인증요청 메시지 제목) : @Model.reqTitle</li>
             <li>AuthCategory (인증분류) : @Model.authCategory</li>
             <li>ReturnURL (복귀 URL) : @Model.returnURL</li>
-            <li>TokenType (원문 구분) : @Model.tokenType</li>
             <li>RequestDT (서명요청일시) : @Model.requestDT</li>
             <li>ViewDT (서명조회일시) : @Model.viewDT</li>
             <li>CompleteDT (서명완료일시) : @Model.completeDT</li>

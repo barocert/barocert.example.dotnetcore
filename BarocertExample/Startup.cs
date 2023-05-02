@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Barocert.kakaocert;
+using Microsoft.AspNetCore.Routing;
 
 public class KakaocertInstance
 {

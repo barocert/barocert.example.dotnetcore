@@ -31,14 +31,14 @@ namespace BarocertExample.Controllers
 			*/
 
 			// Kakaocert 이용기관코드, Kakaocert 파트너 사이트에서 확인
-			String clientCode = "023030000004";
+			String clientCode = "023040000001";
 
 			// 본인인증 요청 정보 객체
 			Identity identity = new Identity();
 
 			// 수신자 정보
 			// 휴대폰번호,성명,생년월일 또는 Ci(연계정보)값 중 택 일
-			identity.receiverHP = _kakaocertService.encrypt("01012341234");
+			identity.receiverHP = _kakaocertService.encrypt("01012341324");
 			identity.receiverName = _kakaocertService.encrypt("홍길동");
 			identity.receiverBirthday = _kakaocertService.encrypt("19700101");
 			// identity.ci = _kakaocertService.encrypt("");
@@ -75,10 +75,10 @@ namespace BarocertExample.Controllers
 		{
 
 			// Kakaocert 이용기관코드, Kakaocert 파트너 사이트에서 확인
-			String clientCode = "023030000004";
+			String clientCode = "023040000001";
 
 			// 요청시 반환받은 접수아이디
-			String receiptId = "02304270230300000040000000000001";
+			String receiptId = "02305020230400000010000000000007";
 
 			try
 			{
@@ -97,14 +97,14 @@ namespace BarocertExample.Controllers
 		* 검증하기 API는 완료된 전자서명 요청당 1회만 요청 가능하며, 사용자가 서명을 완료후 유효시간(10분)이내에만 요청가능 합니다.
 		*/
 
-		public IActionResult verifyIdentity()
+		public IActionResult VerifyIdentity()
 		{
 
 			// 이용기관코드, 파트너 사이트에서 확인
-			string clientCode = "023020000003";
+			string clientCode = "023040000001";
 
 			// 요청시 반환받은 접수아이디
-			string receiptId = "0230309201738000000000000000000000000001";
+			string receiptId = "02305020230400000010000000000007";
 
 			try
 			{
@@ -125,14 +125,14 @@ namespace BarocertExample.Controllers
 		{
 
 			// Kakaocert 이용기관코드, Kakaocert 파트너 사이트에서 확인
-			String clientCode = "023030000004";
+			String clientCode = "023040000001";
 
 			// 전자서명 요청 정보 객체
 			Sign sign = new Sign();
 
 			// 수신자 정보
 			// 휴대폰번호,성명,생년월일 또는 Ci(연계정보)값 중 택 일
-			sign.receiverHP = _kakaocertService.encrypt("01012341234");
+			sign.receiverHP = _kakaocertService.encrypt("01012341324");
 			sign.receiverName = _kakaocertService.encrypt("홍길동");
 			sign.receiverBirthday = _kakaocertService.encrypt("19700101");
 			// sign.ci = _kakaocertService.encrypt("");
@@ -172,10 +172,10 @@ namespace BarocertExample.Controllers
 		{
 
 			// Kakaocert 이용기관코드, Kakaocert 파트너 사이트에서 확인
-			String clientCode = "023030000004";
+			String clientCode = "023040000001";
 
 			// 요청시 반환받은 접수아이디
-			String receiptId = "02304270230300000040000000000001";
+			String receiptId = "02305020230400000010000000000009";
 
 			try
 			{
@@ -196,10 +196,10 @@ namespace BarocertExample.Controllers
 		public IActionResult VerifySign()
 		{
 			// Kakaocert 이용기관코드, Kakaocert 파트너 사이트에서 확인
-			String clientCode = "023030000004";
+			String clientCode = "023040000001";
 
 			// 요청시 반환받은 접수아이디
-			String receiptId = "02304270230300000040000000000003";
+			String receiptId = "02305020230400000010000000000009";
 
 			try
 			{
@@ -215,18 +215,18 @@ namespace BarocertExample.Controllers
 		/**
         * 카카오톡 사용자에게 전자서명을 요청합니다.(복수)
         */
-		public IActionResult requestMultiSign()
+		public IActionResult RequestMultiSign()
 		{
 
 			// Kakaocert 이용기관코드, Kakaocert 파트너 사이트에서 확인
-			String clientCode = "023030000004";
+			String clientCode = "023040000001";
 
 			// 전자서명 요청 정보 객체
 			MultiSign multiSign = new MultiSign();
 
 			// 수신자 정보
 			// 휴대폰번호,성명,생년월일 또는 Ci(연계정보)값 중 택 일
-			multiSign.receiverHP = _kakaocertService.encrypt("01012341234");
+			multiSign.receiverHP = _kakaocertService.encrypt("01012341324");
 			multiSign.receiverName = _kakaocertService.encrypt("홍길동");
 			multiSign.receiverBirthday = _kakaocertService.encrypt("19700101");
 			// multiSign.ci = _kakaocertService.encrypt("");
@@ -243,7 +243,7 @@ namespace BarocertExample.Controllers
 			token.reqTitle = "전자서명복수문서테스트1";
 			// 서명 원문 - 원문 2,800자 까지 입력가능
 			token.token = _kakaocertService.encrypt("전자서명복수테스트데이터1");
-			multiSign.addToken(token);
+			multiSign.AddToken(token);
 
 			// 개별 요청 정보 객체
 			MultiSignTokens token2 = new MultiSignTokens();
@@ -251,7 +251,7 @@ namespace BarocertExample.Controllers
 			token2.reqTitle = "전자서명복수문서테스트2";
 			// 서명 원문 - 원문 2,800자 까지 입력가능
 			token2.token = _kakaocertService.encrypt("전자서명복수테스트데이터2");
-			multiSign.addToken(token2);
+			multiSign.AddToken(token2);
 
 			// 서명 원문 유형
 			// TEXT - 일반 텍스트, HASH - HASH 데이터
@@ -282,10 +282,10 @@ namespace BarocertExample.Controllers
 		{
 
 			// Kakaocert 이용기관코드, Kakaocert 파트너 사이트에서 확인
-			String clientCode = "023030000004";
+			String clientCode = "023040000001";
 
 			// 요청시 반환받은 접수아이디
-			String receiptId = "02304270230300000040000000000005";
+			String receiptId = "02305020230400000010000000000012";
 
 			try
 			{
@@ -307,10 +307,10 @@ namespace BarocertExample.Controllers
 		{
 
 			// Kakaocert 이용기관코드, Kakaocert 파트너 사이트에서 확인
-			String clientCode = "023030000004";
+			String clientCode = "023040000001";
 
 			// 요청시 반환받은 접수아이디
-			String receiptId = "02304270230300000040000000000005";
+			String receiptId = "02305020230400000010000000000012";
 
 			try
 			{
@@ -337,7 +337,7 @@ namespace BarocertExample.Controllers
 
 			// 수신자 정보
 			// 휴대폰번호,성명,생년월일 또는 Ci(연계정보)값 중 택 일
-			cms.receiverHP = _kakaocertService.encrypt("01012341234");
+			cms.receiverHP = _kakaocertService.encrypt("01012341324");
 			cms.receiverName = _kakaocertService.encrypt("홍길동");
 			cms.receiverBirthday = _kakaocertService.encrypt("19700101");
 			// cms.ci = _kakaocertService.encrypt("");
@@ -386,10 +386,10 @@ namespace BarocertExample.Controllers
 		public IActionResult GetCMSStatus()
 		{
 			// Kakaocert 이용기관코드, Kakaocert 파트너 사이트에서 확인
-			String clientCode = "023030000004";
+			String clientCode = "023040000001";
 
 			// 요청시 반환받은 접수아이디
-			String receiptId = "02304270230300000040000000000002";
+			String receiptId = "02305020230400000010000000000013";
 
 			try
 			{
@@ -411,10 +411,10 @@ namespace BarocertExample.Controllers
 		{
 
 			// Kakaocert 이용기관코드, Kakaocert 파트너 사이트에서 확인
-			String clientCode = "023030000004";
+			String clientCode = "023040000001";
 
 			// 요청시 반환받은 접수아이디
-			String receiptId = "02304270230300000040000000000002";
+			String receiptId = "02305020230400000010000000000013";
 
 			try
 			{

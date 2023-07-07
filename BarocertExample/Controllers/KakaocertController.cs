@@ -23,6 +23,7 @@ namespace BarocertExample.Controllers
 
 		/**
 		* 카카오톡 사용자에게 본인인증 전자서명을 요청합니다.
+		* https://developers.barocert.com/reference/kakao/java/identity/api#RequestIdentity
 		*/
 		public IActionResult RequestIdentity()
 		{
@@ -67,6 +68,7 @@ namespace BarocertExample.Controllers
 
 		/**
 		* 본인인증 요청시 반환된 접수아이디를 통해 서명 상태를 확인합니다.
+		* https://developers.barocert.com/reference/kakao/java/identity/api#GetIdentityStatus
 		*/
 		public IActionResult GetIdentityStatus()
 		{
@@ -92,6 +94,7 @@ namespace BarocertExample.Controllers
 		/**
 		* 본인인증 요청시 반환된 접수아이디를 통해 본인인증 서명을 검증합니다. 
 		* 검증하기 API는 완료된 전자서명 요청당 1회만 요청 가능하며, 사용자가 서명을 완료후 유효시간(10분)이내에만 요청가능 합니다.
+		* https://developers.barocert.com/reference/kakao/java/identity/api#VerifyIdentity
 		*/
 
 		public IActionResult VerifyIdentity()
@@ -117,6 +120,7 @@ namespace BarocertExample.Controllers
 
 		/**
 		* 카카오톡 사용자에게 전자서명을 요청합니다.(단건)
+		* https://developers.barocert.com/reference/kakao/java/sign/api-single#RequestSign
 		*/
 		public IActionResult RequestSign()
 		{
@@ -165,6 +169,7 @@ namespace BarocertExample.Controllers
 
 		/**
 		* 전자서명 요청시 반환된 접수아이디를 통해 서명 상태를 확인합니다.
+		* https://developers.barocert.com/reference/kakao/java/sign/api-single#GetSignStatus
 		*/
 		public IActionResult GetSignStatus()
 		{
@@ -190,6 +195,7 @@ namespace BarocertExample.Controllers
 		/**
 		* 전자서명 요청시 반환된 접수아이디를 통해 서명을 검증합니다. (단건)
 		* 검증하기 API는 완료된 전자서명 요청당 1회만 요청 가능하며, 사용자가 서명을 완료후 유효시간(10분)이내에만 요청가능 합니다.
+		* https://developers.barocert.com/reference/kakao/java/sign/api-single#VerifySign
 		*/
 		public IActionResult VerifySign()
 		{
@@ -212,6 +218,7 @@ namespace BarocertExample.Controllers
 
 		/**
 		* 카카오톡 사용자에게 전자서명을 요청합니다.(복수)
+		* https://developers.barocert.com/reference/kakao/java/sign/api-multi#RequestMultiSign
 		*/
 		public IActionResult RequestMultiSign()
 		{
@@ -275,6 +282,7 @@ namespace BarocertExample.Controllers
 
 		/**
 		* 전자서명 요청시 반환된 접수아이디를 통해 서명 상태를 확인합니다. (복수)
+		* https://developers.barocert.com/reference/kakao/java/sign/api-multi#GetMultiSignStatus
 		*/
 		public IActionResult GetMultiSignStatus()
 		{
@@ -300,6 +308,7 @@ namespace BarocertExample.Controllers
 		/**
 		* 전자서명 요청시 반환된 접수아이디를 통해 서명을 검증합니다. (복수)
 		* 검증하기 API는 완료된 전자서명 요청당 1회만 요청 가능하며, 사용자가 서명을 완료후 유효시간(10분)이내에만 요청가능 합니다.
+		* https://developers.barocert.com/reference/kakao/java/sign/api-multi#VerifyMultiSign
 		*/
 		public IActionResult VerifyMultiSign()
 		{
@@ -324,6 +333,7 @@ namespace BarocertExample.Controllers
 
 		/**
 		 * 카카오톡 사용자에게 자동이체 출금동의 전자서명을 요청합니다.
+		 * https://developers.barocert.com/reference/kakao/java/cms/api#RequestCMS
 		 */
 		public IActionResult RequestCMS()
 		{
@@ -380,6 +390,7 @@ namespace BarocertExample.Controllers
 
 		/**
 		* 자동이체 출금동의 요청시 반환된 접수아이디를 통해 서명 상태를 확인합니다.
+		* https://developers.barocert.com/reference/kakao/java/cms/api#GetCMSStatus
 		*/
 		public IActionResult GetCMSStatus()
 		{
@@ -404,6 +415,7 @@ namespace BarocertExample.Controllers
 		/**
 		* 자동이체 출금동의 요청시 반환된 접수아이디를 통해 서명을 검증합니다.
 		* 검증하기 API는 완료된 전자서명 요청당 1회만 요청 가능하며, 사용자가 서명을 완료후 유효시간(10분)이내에만 요청가능 합니다.
+		* https://developers.barocert.com/reference/kakao/java/cms/api#VerifyCMS
 		*/
 		public IActionResult VerifyCMS()
 		{

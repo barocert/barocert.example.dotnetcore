@@ -20,12 +20,11 @@ namespace BarocertExample.Controllers
 			return View();
 		}
 
-
-		/**
-		* 카카오톡 사용자에게 본인인증 전자서명을 요청합니다.
-		* https://developers.barocert.com/reference/kakao/java/identity/api#RequestIdentity
-		*/
-		public IActionResult RequestIdentity()
+        /*
+         * 카카오톡 이용자에게 본인인증을 요청합니다.
+         * https://developers.barocert.com/reference/kakao/dotnetcore/identity/api#RequestIdentity
+         */
+        public IActionResult RequestIdentity()
 		{
 
 			// Kakaocert 이용기관코드, Kakaocert 파트너 사이트에서 확인
@@ -35,7 +34,7 @@ namespace BarocertExample.Controllers
 			Identity identity = new Identity();
 
 			// 수신자 휴대폰번호 - 11자 (하이픈 제외)
-			identity.receiverHP = _kakaocertService.encrypt("01012341324");
+			identity.receiverHP = _kakaocertService.encrypt("01012341234");
   		    // 수신자 성명 - 80자
 			identity.receiverName = _kakaocertService.encrypt("홍길동");
       		// 수신자 생년월일 - 8자 (yyyyMMdd)
@@ -66,18 +65,18 @@ namespace BarocertExample.Controllers
 			}
 		}
 
-		/**
-		* 본인인증 요청시 반환된 접수아이디를 통해 서명 상태를 확인합니다.
-		* https://developers.barocert.com/reference/kakao/java/identity/api#GetIdentityStatus
-		*/
-		public IActionResult GetIdentityStatus()
+        /*
+         * 본인인증 요청 후 반환받은 접수아이디로 본인인증 진행 상태를 확인합니다.
+         * https://developers.barocert.com/reference/kakao/dotnetcore/identity/api#GetIdentityStatus
+         */
+        public IActionResult GetIdentityStatus()
 		{
 
 			// Kakaocert 이용기관코드, Kakaocert 파트너 사이트에서 확인
 			String clientCode = "023040000001";
 
 			// 요청시 반환받은 접수아이디
-			String receiptId = "02305020230400000010000000000007";
+			String receiptId = "02309010230400000010000000000001";
 
 			try
 			{
@@ -91,20 +90,21 @@ namespace BarocertExample.Controllers
 
 		}
 
-		/**
-		* 본인인증 요청시 반환된 접수아이디를 통해 본인인증 서명을 검증합니다. 
-		* 검증하기 API는 완료된 전자서명 요청당 1회만 요청 가능하며, 사용자가 서명을 완료후 유효시간(10분)이내에만 요청가능 합니다.
-		* https://developers.barocert.com/reference/kakao/java/identity/api#VerifyIdentity
-		*/
-
-		public IActionResult VerifyIdentity()
+        /*
+         * 완료된 전자서명을 검증하고 전자서명값(signedData)을 반환 받습니다.
+         * 반환받은 전자서명값(signedData)과 [1. RequestIdentity] 함수 호출에 입력한 Token의 동일 여부를 확인하여 이용자의 본인인증 검증을 완료합니다.
+         * 카카오 보안정책에 따라 검증 API는 1회만 호출할 수 있습니다. 재시도시 오류가 반환됩니다.
+         * 전자서명 완료일시로부터 10분 이후에 검증 API를 호출하면 오류가 반환됩니다.
+         * https://developers.barocert.com/reference/kakao/dotnetcore/identity/api#VerifyIdentity
+         */
+        public IActionResult VerifyIdentity()
 		{
 
-			// 이용기관코드, 파트너 사이트에서 확인
-			string clientCode = "023040000001";
+            // Kakaocert 이용기관코드, Kakaocert 파트너 사이트에서 확인
+            string clientCode = "023040000001";
 
 			// 요청시 반환받은 접수아이디
-			string receiptId = "02305020230400000010000000000007";
+			string receiptId = "02309010230400000010000000000001";
 
 			try
 			{
@@ -118,11 +118,11 @@ namespace BarocertExample.Controllers
 		}
 
 
-		/**
-		* 카카오톡 사용자에게 전자서명을 요청합니다.(단건)
-		* https://developers.barocert.com/reference/kakao/java/sign/api-single#RequestSign
-		*/
-		public IActionResult RequestSign()
+        /*
+         * 카카오톡 이용자에게 단건(1건) 문서의 전자서명을 요청합니다.
+         * https://developers.barocert.com/reference/kakao/dotnetcore/sign/api-single#RequestSign
+         */
+        public IActionResult RequestSign()
 		{
 
 			// Kakaocert 이용기관코드, Kakaocert 파트너 사이트에서 확인
@@ -133,7 +133,7 @@ namespace BarocertExample.Controllers
 
 
 			// 수신자 휴대폰번호 - 11자 (하이픈 제외)
-			sign.receiverHP = _kakaocertService.encrypt("01012341324");
+			sign.receiverHP = _kakaocertService.encrypt("01012341234");
   		    // 수신자 성명 - 80자
 			sign.receiverName = _kakaocertService.encrypt("홍길동");
       		// 수신자 생년월일 - 8자 (yyyyMMdd)
@@ -167,18 +167,18 @@ namespace BarocertExample.Controllers
 			}
 		}
 
-		/**
-		* 전자서명 요청시 반환된 접수아이디를 통해 서명 상태를 확인합니다.
-		* https://developers.barocert.com/reference/kakao/java/sign/api-single#GetSignStatus
-		*/
-		public IActionResult GetSignStatus()
+        /*
+         * 전자서명(단건) 요청 후 반환받은 접수아이디로 인증 진행 상태를 확인합니다.
+         * https://developers.barocert.com/reference/kakao/dotnetcore/sign/api-single#GetSignStatus
+         */
+        public IActionResult GetSignStatus()
 		{
 
 			// Kakaocert 이용기관코드, Kakaocert 파트너 사이트에서 확인
 			String clientCode = "023040000001";
 
 			// 요청시 반환받은 접수아이디
-			String receiptId = "02305020230400000010000000000009";
+			String receiptId = "02309010230400000010000000000002";
 
 			try
 			{
@@ -192,18 +192,19 @@ namespace BarocertExample.Controllers
 
 		}
 
-		/**
-		* 전자서명 요청시 반환된 접수아이디를 통해 서명을 검증합니다. (단건)
-		* 검증하기 API는 완료된 전자서명 요청당 1회만 요청 가능하며, 사용자가 서명을 완료후 유효시간(10분)이내에만 요청가능 합니다.
-		* https://developers.barocert.com/reference/kakao/java/sign/api-single#VerifySign
-		*/
-		public IActionResult VerifySign()
+        /*
+         * 완료된 전자서명을 검증하고 전자서명값(signedData)을 반환 받습니다.
+         * 카카오 보안정책에 따라 검증 API는 1회만 호출할 수 있습니다. 재시도시 오류가 반환됩니다.
+         * 전자서명 완료일시로부터 10분 이후에 검증 API를 호출하면 오류가 반환됩니다.
+         * https://developers.barocert.com/reference/kakao/dotnetcore/sign/api-single#VerifySign
+         */
+        public IActionResult VerifySign()
 		{
 			// Kakaocert 이용기관코드, Kakaocert 파트너 사이트에서 확인
 			String clientCode = "023040000001";
 
 			// 요청시 반환받은 접수아이디
-			String receiptId = "02305020230400000010000000000009";
+			String receiptId = "02309010230400000010000000000002";
 
 			try
 			{
@@ -216,11 +217,11 @@ namespace BarocertExample.Controllers
 			}
 		}
 
-		/**
-		* 카카오톡 사용자에게 전자서명을 요청합니다.(복수)
-		* https://developers.barocert.com/reference/kakao/java/sign/api-multi#RequestMultiSign
-		*/
-		public IActionResult RequestMultiSign()
+        /*
+         * 카카오톡 이용자에게 복수(최대 20건) 문서의 전자서명을 요청합니다.
+         * https://developers.barocert.com/reference/kakao/dotnetcore/sign/api-multi#RequestMultiSign
+         */
+        public IActionResult RequestMultiSign()
 		{
 
 			// Kakaocert 이용기관코드, Kakaocert 파트너 사이트에서 확인
@@ -230,7 +231,7 @@ namespace BarocertExample.Controllers
 			MultiSign multiSign = new MultiSign();
 
 			// 수신자 휴대폰번호 - 11자 (하이픈 제외)
-			multiSign.receiverHP = _kakaocertService.encrypt("01012341324");
+			multiSign.receiverHP = _kakaocertService.encrypt("01012341234");
   		    // 수신자 성명 - 80자
 			multiSign.receiverName = _kakaocertService.encrypt("홍길동");
       		// 수신자 생년월일 - 8자 (yyyyMMdd)
@@ -280,18 +281,18 @@ namespace BarocertExample.Controllers
 			}
 		}
 
-		/**
-		* 전자서명 요청시 반환된 접수아이디를 통해 서명 상태를 확인합니다. (복수)
-		* https://developers.barocert.com/reference/kakao/java/sign/api-multi#GetMultiSignStatus
-		*/
-		public IActionResult GetMultiSignStatus()
+        /*
+         * 전자서명(복수) 요청 후 반환받은 접수아이디로 인증 진행 상태를 확인합니다.
+         * https://developers.barocert.com/reference/kakao/dotnetcore/sign/api-multi#GetMultiSignStatus
+         */
+        public IActionResult GetMultiSignStatus()
 		{
 
 			// Kakaocert 이용기관코드, Kakaocert 파트너 사이트에서 확인
 			String clientCode = "023040000001";
 
 			// 요청시 반환받은 접수아이디
-			String receiptId = "02305020230400000010000000000012";
+			String receiptId = "02309010230400000010000000000003";
 
 			try
 			{
@@ -305,19 +306,20 @@ namespace BarocertExample.Controllers
 
 		}
 
-		/**
-		* 전자서명 요청시 반환된 접수아이디를 통해 서명을 검증합니다. (복수)
-		* 검증하기 API는 완료된 전자서명 요청당 1회만 요청 가능하며, 사용자가 서명을 완료후 유효시간(10분)이내에만 요청가능 합니다.
-		* https://developers.barocert.com/reference/kakao/java/sign/api-multi#VerifyMultiSign
-		*/
-		public IActionResult VerifyMultiSign()
+        /*
+         * 완료된 전자서명을 검증하고 전자서명값(signedData)을 반환 받습니다.
+         * 카카오 보안정책에 따라 검증 API는 1회만 호출할 수 있습니다. 재시도시 오류가 반환됩니다.
+         * 전자서명 완료일시로부터 10분 이후에 검증 API를 호출하면 오류가 반환됩니다.
+         * https://developers.barocert.com/reference/kakao/dotnetcore/sign/api-multi#VerifyMultiSign
+         */
+        public IActionResult VerifyMultiSign()
 		{
 
 			// Kakaocert 이용기관코드, Kakaocert 파트너 사이트에서 확인
 			String clientCode = "023040000001";
 
 			// 요청시 반환받은 접수아이디
-			String receiptId = "02305020230400000010000000000012";
+			String receiptId = "02309010230400000010000000000003";
 
 			try
 			{
@@ -331,11 +333,11 @@ namespace BarocertExample.Controllers
 
 		}
 
-		/**
-		 * 카카오톡 사용자에게 자동이체 출금동의 전자서명을 요청합니다.
-		 * https://developers.barocert.com/reference/kakao/java/cms/api#RequestCMS
-		 */
-		public IActionResult RequestCMS()
+        /*
+         * 카카오톡 이용자에게 자동이체 출금동의를 요청합니다.
+         * https://developers.barocert.com/reference/kakao/dotnetcore/cms/api#RequestCMS
+         */
+        public IActionResult RequestCMS()
 		{
 			// Kakaocert 이용기관코드, Kakaocert 파트너 사이트에서 확인
 			String clientCode = "023040000001";
@@ -344,7 +346,7 @@ namespace BarocertExample.Controllers
 			CMS cms = new CMS();
 
 			// 수신자 휴대폰번호 - 11자 (하이픈 제외)
-			cms.receiverHP = _kakaocertService.encrypt("01012341324");
+			cms.receiverHP = _kakaocertService.encrypt("01012341234");
   		    // 수신자 성명 - 80자
 			cms.receiverName = _kakaocertService.encrypt("홍길동");
       		// 수신자 생년월일 - 8자 (yyyyMMdd)
@@ -388,17 +390,17 @@ namespace BarocertExample.Controllers
 			}
 		}
 
-		/**
-		* 자동이체 출금동의 요청시 반환된 접수아이디를 통해 서명 상태를 확인합니다.
-		* https://developers.barocert.com/reference/kakao/java/cms/api#GetCMSStatus
-		*/
-		public IActionResult GetCMSStatus()
+        /*
+         * 자동이체 출금동의 요청 후 반환받은 접수아이디로 인증 진행 상태를 확인합니다.
+         * https://developers.barocert.com/reference/kakao/dotnetcore/cms/api#GetCMSStatus
+         */
+        public IActionResult GetCMSStatus()
 		{
 			// Kakaocert 이용기관코드, Kakaocert 파트너 사이트에서 확인
 			String clientCode = "023040000001";
 
 			// 요청시 반환받은 접수아이디
-			String receiptId = "02305020230400000010000000000013";
+			String receiptId = "02309010230400000010000000000004";
 
 			try
 			{
@@ -412,19 +414,20 @@ namespace BarocertExample.Controllers
 
 		}
 
-		/**
-		* 자동이체 출금동의 요청시 반환된 접수아이디를 통해 서명을 검증합니다.
-		* 검증하기 API는 완료된 전자서명 요청당 1회만 요청 가능하며, 사용자가 서명을 완료후 유효시간(10분)이내에만 요청가능 합니다.
-		* https://developers.barocert.com/reference/kakao/java/cms/api#VerifyCMS
-		*/
-		public IActionResult VerifyCMS()
+        /*
+         * 완료된 전자서명을 검증하고 전자서명값(signedData)을 반환 받습니다.
+         * 카카오 보안정책에 따라 검증 API는 1회만 호출할 수 있습니다. 재시도시 오류가 반환됩니다.
+         * 전자서명 완료일시로부터 10분 이후에 검증 API를 호출하면 오류가 반환됩니다.
+         * https://developers.barocert.com/reference/kakao/dotnetcore/cms/api#VerifyCMS
+         */
+        public IActionResult VerifyCMS()
 		{
 
 			// Kakaocert 이용기관코드, Kakaocert 파트너 사이트에서 확인
 			String clientCode = "023040000001";
 
 			// 요청시 반환받은 접수아이디
-			String receiptId = "02305020230400000010000000000013";
+			String receiptId = "02309010230400000010000000000004";
 
 			try
 			{
@@ -438,5 +441,31 @@ namespace BarocertExample.Controllers
 
 		}
 
-	}
+        /*
+         * 완료된 전자서명을 검증하고 전자서명 데이터 전문(signedData)을 반환 받습니다.
+         * 카카오 보안정책에 따라 검증 API는 1회만 호출할 수 있습니다. 재시도시 오류가 반환됩니다.
+         * 전자서명 완료일시로부터 10분 이후에 검증 API를 호출하면 오류가 반환됩니다.
+         * https://developers.barocert.com/reference/kakao/dotnetcore/login/api#VerifyLogin
+         */
+        public IActionResult VerifyLogin()
+        {
+            // Kakaocert 이용기관코드, Kakaocert 파트너 사이트에서 확인
+            String clientCode = "023040000001";
+
+            // 요청시 반환받은 트랜잭션 아이디
+            String txID = "0189bd3760-7779-48c1-b8af-688606214f11";
+
+            try
+            {
+                var resultObj = _kakaocertService.verifyLogin(clientCode, txID);
+                return View("VerifyLogin", resultObj);
+            }
+            catch (BarocertException ke)
+            {
+                return View("Exception", ke);
+            }
+        }
+
+
+    }
 }

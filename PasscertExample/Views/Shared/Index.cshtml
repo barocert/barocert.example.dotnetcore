@@ -1,0 +1,44 @@
+﻿@{
+	ViewBag.Title = "Barocert Service SDK ASP.NET Core Example.";
+}
+
+<div id="content">
+	<p class="heading1">@ViewData["Title"]</p>
+	<br />
+	<fieldset class="fieldset1">
+		<legend>패스 본인인증 API</legend>
+		<ul>
+			<li><a href="Passcert/requestIdentity">RequestIdentity</a> - 본인인증 요청</li>
+			<li><a href="Passcert/getIdentityStatus">GetIdentityStatus</a> - 본인인증 상태확인</li>
+			<li><a href="Passcert/verifyIdentity">VerifyIdentity</a> - 본인인증 검증</li>
+		</ul>
+	</fieldset>
+	<br />
+	<fieldset class="fieldset1">
+		<legend>패스 전자서명 API</legend>
+		<ul>
+			<li><a href="Passcert/requestSign">RequestSign</a> - 전자서명 요청</li>
+			<li><a href="Passcert/getSignStatus">GetSignStatus</a> -전자서명 상태확인</li>
+			<li><a href="Passcert/verifySign">VerifySign</a> - 전자서명 검증</li>
+		</ul>
+	</fieldset>
+	<br />
+	<fieldset class="fieldset1">
+		<legend>패스 출금동의 API</legend>
+		<ul>
+			<li><a href="Passcert/requestCMS">RequestCMS</a> - 출근동의 요청</li>
+			<li><a href="Passcert/getCMSStatus">GetCMSStatus</a> - 출금동의 상태확인</li>
+			<li><a href="Passcert/verifyCMS">VerifyCMS</a> - 출금동의 검증</li>
+		</ul>
+	</fieldset>
+	<br />
+	<fieldset class="fieldset1">
+		<legend>패스 간편로그인 API</legend>
+		<ul>
+			<li><a href="Passcert/requestLogin">RequestLogin</a> - 간편로그인 요청</li>
+			<li><a href="Passcert/getLoginStatus">GetLoginStatus</a> - 간편로그인 상태확인</li>
+			<li><a href="Passcert/verifyLogin">VerifyLogin</a> - 간편로그인 검증</li>
+		</ul>
+	</fieldset>
+
+</div>

@@ -1,5 +1,5 @@
 ﻿@{
-	ViewBag.Title = "카카오 자동이체 출금동의 요청";
+	ViewBag.Title = "패스 자동이체 출금동의 요청";
 }
 
 <div id="content">
@@ -8,8 +8,9 @@
 	<fieldset class="fieldset1">
 		<legend>@ViewData["Title"]</legend>
 		<ul>
-			<li>ReceiptID (접수아이디) : @Model.receiptID</li>
+			<li>ReceiptID (접수아이디) : @Model.receiptId</li>
 			<li>Scheme (앱스킴) : @Model.scheme</li>
+			<li>MarketURL (앱다운로드URL) : @Model.marketUrl</li>
 		</ul>
 	</fieldset>
 </div>

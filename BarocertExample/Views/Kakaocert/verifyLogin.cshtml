@@ -1,5 +1,5 @@
 ﻿@{
-	ViewBag.Title = "카카오 본인인증 검증";
+	ViewBag.Title = "카카오 간편로그인 검증";
 }
 
 <div id="content">
@@ -8,7 +8,7 @@
 	<fieldset class="fieldset1">
 		<legend>@ViewData["Title"]</legend>
 		<ul>
-			<li>ReceiptID (접수 아이디) : @Model.receiptID</li>
+			<li>txID (트랜잭션 아이디) : @Model.txID</li>
 			<li>State (상태) : @Model.state</li>
 			<li>SignedData (전자서명 데이터 전문) : @Model.signedData</li>
 			<li>Ci (연계정보) : @Model.ci</li>

@@ -1,5 +1,5 @@
 ﻿@{
-	ViewBag.Title = "카카오 자동이체 출금동의 상태확인";
+	ViewBag.Title = "패스 간편로그인 상태확인";
 }
 
 <div id="content">
@@ -8,20 +8,23 @@
 	<fieldset class="fieldset1">
 		<legend>@ViewData["Title"]</legend>
 		<ul>
-			<li>ReceiptID (접수 아이디) : @Model.receiptID</li>
 			<li>ClientCode (이용기관 코드) : @Model.clientCode</li>
+			<li>ReceiptID (접수 아이디) : @Model.receiptID</li>
 			<li>State (상태코드) : @Model.state</li>
 			<li>ExpireIn (요청 만료시간) : @Model.expireIn</li>
 			<li>CallCenterName (이용기관 명) : @Model.callCenterName</li>
 			<li>CallCenterNum (이용기관 연락처) : @Model.callCenterNum</li>
 			<li>ReqTitle (인증요청 메시지 제목) : @Model.reqTitle</li>
-			<li>AuthCategory (인증분류) : @Model.authCategory</li>
-			<li>ReturnURL (복귀 URL) : @Model.returnURL</li>
+			<li>ReqMessage (인증요청 메시지) : @Model.reqMessage</li>
 			<li>RequestDT (서명요청일시) : @Model.requestDT</li>
-			<li>ViewDT (서명조회일시) : @Model.viewDT</li>
 			<li>CompleteDT (서명완료일시) : @Model.completeDT</li>
 			<li>ExpireDT (서명만료일시) : @Model.expireDT</li>
-			<li>VerifyDT (서명검증일시) : @Model.verifyDT</li>
+			<li>RejectDT (서명거절일시) : @Model.rejectDT</li>
+			<li>TokenType (원문 구분) : @Model.tokenType</li>
+			<li>UserAgreementYN (사용자동의필요여부) : @Model.userAgreementYN</li>
+			<li>ReceiverInfoYN (사용자정보포함여부) : @Model.receiverInfoYN</li>
+			<li>TelcoType (통신사 유형) : @Model.telcoType</li>
+			<li>DeviceOSType (모바일장비 유형) : @Model.deviceOSType</li>
 			<li>Scheme (앱스킴) : @Model.scheme</li>
 			<li>AppUseYN (앱사용유무) : @Model.appUseYN</li>
 		</ul>

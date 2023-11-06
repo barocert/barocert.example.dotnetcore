@@ -1,0 +1,26 @@
+﻿@{
+	ViewBag.Title = "네이버 전자서명(단건) 상태확인";
+}
+
+<div id="content">
+	<p class="heading1">Response</p>
+	<br />
+	<fieldset class="fieldset1">
+		<legend>@ViewData["Title"]</legend>
+		<ul>
+			<li>ReceiptID (접수 아이디) : @Model.receiptID</li>
+			<li>ClientCode (이용기관 코드) : @Model.clientCode</li>
+			<li>State (상태코드) : @Model.state</li>
+			<li>ExpireIn (요청 만료시간) : @Model.expireIn</li>
+			<li>CallCenterName (이용기관 명) : @Model.callCenterName</li>
+			<li>CallCenterNum (이용기관 연락처) : @Model.callCenterNum</li>
+			<li>ReqTitle (인증요청 메시지 제목) : @Model.reqTitle</li>
+			<li>ExpireDT (서명만료일시) : @Model.expireDT</li>
+			<li>TokenType (원문 유형) : @Model.tokenType</li>
+			<li>AppUseYN (앱사용유무) : @Model.appUseYN</li>
+			<li>DeviceOSType (모바일장비 유형) : @Model.deviceOSType</li>
+			<li>ReturnURL (복귀 URL) : @Model.returnURL</li>
+			<li>Scheme (앱스킴) : @Model.scheme</li>
+		</ul>
+	</fieldset>
+</div>

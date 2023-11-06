@@ -38,18 +38,18 @@ namespace BarocertExample.Controllers
             // 수신자 성명 - 80자
             identity.receiverName = _passcertService.encrypt("홍길동");
             // 수신자 생년월일 - 8자 (yyyyMMdd)
-            identity.receiverBirthday = _passcertService.encrypt("19900911");
+            identity.receiverBirthday = _passcertService.encrypt("19700101");
 
             // 인증요청 메시지 제목 - 최대 40자
-            identity.reqTitle = "인증요청 메시지 제목란";
+            identity.reqTitle = "본인인증 요청 메시지 제목";
             // 인증요청 메시지 - 최대 500자
-            identity.reqMessage = _passcertService.encrypt("인증요청 메시지");
+            identity.reqMessage = _passcertService.encrypt("본인인증 요청 메시지");
             // 고객센터 연락처 - 최대 12자
             identity.callCenterNum = "1600-9854";
             // 인증요청 만료시간 - 최대 1,000(초)까지 입력 가능
             identity.expireIn = 1000;
             // 서명 원문 - 최대 2,800자 까지 입력가능
-            identity.token = _passcertService.encrypt("본인인증요청토큰");
+            identity.token = _passcertService.encrypt("본인인증 요청 원문");
 
             // 사용자 동의 필요 여부
             identity.userAgreementYN = true;
@@ -158,18 +158,18 @@ namespace BarocertExample.Controllers
             // 수신자 성명 - 80자
             sign.receiverName = _passcertService.encrypt("홍길동");
             // 수신자 생년월일 - 8자 (yyyyMMdd)
-            sign.receiverBirthday = _passcertService.encrypt("19900911");
+            sign.receiverBirthday = _passcertService.encrypt("19700101");
 
             // 인증요청 메시지 제목 - 최대 40자
-            sign.reqTitle = "전자서명 메시지 제목";
+            sign.reqTitle = "전자서명 요청 메시지 제목";
             // 인증요청 메시지 - 최대 500자
-            sign.reqMessage = _passcertService.encrypt("전자서명 메시지");
+            sign.reqMessage = _passcertService.encrypt("전자서명 요청 메시지");
             // 고객센터 연락처 - 최대 12자
             sign.callCenterNum = "1600-9854";
             // 인증요청 만료시간 - 최대 1,000(초)까지 입력 가능
             sign.expireIn = 1000;
             // 서명 원문 - 원문 2,800자 까지 입력가능
-            sign.token = _passcertService.encrypt("전자서명요청토큰");
+            sign.token = _passcertService.encrypt("전자서명 요청 원문");
             // 서명 원문 유형
             // 'TEXT' - 일반 텍스트, 'HASH' - HASH 데이터, 'URL' - URL 데이터
             // 원본데이터(originalTypeCode, originalURL, originalFormatCode) 입력시 'TEXT'사용 불가
@@ -286,12 +286,12 @@ namespace BarocertExample.Controllers
             // 수신자 성명 - 80자
             cms.receiverName = _passcertService.encrypt("홍길동");
             // 수신자 생년월일 - 8자 (yyyyMMdd)
-            cms.receiverBirthday = _passcertService.encrypt("19900911");
+            cms.receiverBirthday = _passcertService.encrypt("19700101");
 
             // 인증요청 메시지 제목 - 최대 40자
-            cms.reqTitle = "출금동의 메시지 제목";
+            cms.reqTitle = "출금동의 요청 메시지 제목";
             // 인증요청 메시지 - 최대 500자
-            cms.reqMessage = _passcertService.encrypt("출금동의 메시지");
+            cms.reqMessage = _passcertService.encrypt("출금동의 요청 메시지");
             // 고객센터 연락처 - 최대 12자
             cms.callCenterNum = "1600-9854";
             // 인증요청 만료시간 - 최대 1,000(초)까지 입력 가능
@@ -417,18 +417,18 @@ namespace BarocertExample.Controllers
             // 수신자 성명 - 80자
             login.receiverName = _passcertService.encrypt("홍길동");
             // 수신자 생년월일 - 8자 (yyyyMMdd)
-            login.receiverBirthday = _passcertService.encrypt("19900911");
+            login.receiverBirthday = _passcertService.encrypt("19700101");
 
             // 인증요청 메시지 제목 - 최대 40자
-            login.reqTitle = "간편로그인 메시지 제목란";
+            login.reqTitle = "간편로그인 요청 메시지 제목";
             // 인증요청 메시지 - 최대 500자
-            login.reqMessage = _passcertService.encrypt("간편로그인 메시지");
+            login.reqMessage = _passcertService.encrypt("간편로그인 요청 메시지");
             // 고객센터 연락처 - 최대 12자
             login.callCenterNum = "1600-9854";
             // 인증요청 만료시간 - 최대 1,000(초)까지 입력 가능
             login.expireIn = 1000;
             // 서명 원문 - 최대 2,800자 까지 입력가능
-            login.token = _passcertService.encrypt("간편로그인요청토큰");
+            login.token = _passcertService.encrypt("간편로그인 요청 원문");
 
             // 사용자 동의 필요 여부
             login.userAgreementYN = true;

@@ -41,11 +41,11 @@ namespace BarocertExample.Controllers
             identity.receiverBirthday = _kakaocertService.encrypt("19700101");
 
             // 인증요청 메시지 제목 - 최대 40자
-            identity.reqTitle = "인증요청 메시지 제목란";
+            identity.reqTitle = "본인인증 요청 메시지 제목";
             // 인증요청 만료시간 - 최대 1,000(초)까지 입력 가능
             identity.expireIn = 1000;
             // 서명 원문 - 최대 40자 까지 입력가능
-            identity.token = _kakaocertService.encrypt("본인인증요청토큰");
+            identity.token = _kakaocertService.encrypt("본인인증 요청 원문");
 
             // AppToApp 인증요청 여부
             // true - AppToApp 인증방식, false - Talk Message 인증방식
@@ -140,11 +140,11 @@ namespace BarocertExample.Controllers
             sign.receiverBirthday = _kakaocertService.encrypt("19700101");
 
             // 인증요청 메시지 제목 - 최대 40자
-            sign.reqTitle = "전자서명단건테스트";
+            sign.reqTitle = "전자서명(단건) 요청 메시지 제목";
             // 인증요청 만료시간 - 최대 1,000(초)까지 입력 가능
             sign.expireIn = 1000;
             // 서명 원문 - 원문 2,800자 까지 입력가능
-            sign.token = _kakaocertService.encrypt("전자서명단건테스트데이터");
+            sign.token = _kakaocertService.encrypt("전자서명(단건) 요청 원문");
             // 서명 원문 유형
             // TEXT - 일반 텍스트, HASH - HASH 데이터
             sign.tokenType = "TEXT";
@@ -238,7 +238,7 @@ namespace BarocertExample.Controllers
             multiSign.receiverBirthday = _kakaocertService.encrypt("19700101");
 
             // 인증요청 메시지 제목 - 최대 40자
-            multiSign.reqTitle = "전자서명복수테스트";
+            multiSign.reqTitle = "전자서명(복수) 요청 메시지 제목";
             // 인증요청 만료시간 - 최대 1,000(초)까지 입력 가능
             multiSign.expireIn = 1000;
 
@@ -246,17 +246,17 @@ namespace BarocertExample.Controllers
             // 개별 요청 정보 객체
             MultiSignTokens token = new MultiSignTokens();
             // 인증요청 메시지 제목 - 최대 40자
-            token.reqTitle = "전자서명복수문서테스트1";
+            token.reqTitle = "전자서명(복수) 요청 메시지 제목 1";
             // 서명 원문 - 원문 2,800자 까지 입력가능
-            token.token = _kakaocertService.encrypt("전자서명복수테스트데이터1");
+            token.token = _kakaocertService.encrypt("전자서명(복수) 요청 원문 1");
             multiSign.AddToken(token);
 
             // 개별 요청 정보 객체
             MultiSignTokens token2 = new MultiSignTokens();
             // 인증요청 메시지 제목 - 최대 40자
-            token2.reqTitle = "전자서명복수문서테스트2";
+            token2.reqTitle = "전자서명(복수) 요청 메시지 제목 2";
             // 서명 원문 - 원문 2,800자 까지 입력가능
-            token2.token = _kakaocertService.encrypt("전자서명복수테스트데이터2");
+            token2.token = _kakaocertService.encrypt("전자서명(복수) 요청 원문 2");
             multiSign.AddToken(token2);
 
             // 서명 원문 유형
@@ -353,7 +353,7 @@ namespace BarocertExample.Controllers
             cms.receiverBirthday = _kakaocertService.encrypt("19700101");
 
             // 인증요청 메시지 제목 - 최대 40자
-            cms.reqTitle = "인증요청 메시지 제공란";
+            cms.reqTitle = "출금동의 요청 메시지 제목";
 
             // 인증요청 만료시간 - 최대 1,000(초)까지 입력 가능
             cms.expireIn = 1000;

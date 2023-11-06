@@ -1,0 +1,28 @@
+﻿@{
+	ViewBag.Title = "Barocert Service SDK ASP.NET Core Example.";
+}
+
+<div id="content">
+	<p class="heading1">@ViewData["Title"]</p>
+	<br />
+	<fieldset class="fieldset1">
+		<legend>네이버 본인인증 API</legend>
+		<ul>
+			<li><a href="Navercert/requestIdentity">RequestIdentity</a> - 본인인증 요청</li>
+			<li><a href="Navercert/getIdentityStatus">GetIdentityStatus</a> - 본인인증 상태확인</li>
+			<li><a href="Navercert/verifyIdentity">VerifyIdentity</a> - 본인인증 검증</li>
+		</ul>
+	</fieldset>
+	<br />
+	<fieldset class="fieldset1">
+		<legend>네이버 전자서명 API</legend>
+		<ul>
+			<li><a href="Navercert/requestSign">RequestSign</a> - 전자서명(단건) 요청</li>
+			<li><a href="Navercert/getSignStatus">GetSignStatus</a> - 전자서명(단건) 상태확인</li>
+			<li><a href="Navercert/verifySign">VerifySign</a> - 전자서명(단건) 검증</li>
+			<li><a href="Navercert/requestMultiSign">RequestMultiSign</a> - 전자서명(복수) 요청</li>
+			<li><a href="Navercert/getMultiSignStatus">GetMultiSignStatus</a> - 전자서명(복수) 상태확인</li>
+			<li><a href="Navercert/verifyMultiSign">VerifyMultiSign</a> - 전자서명(복수) 검증</li>
+		</ul>
+	</fieldset>
+</div>

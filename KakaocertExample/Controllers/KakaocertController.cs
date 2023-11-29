@@ -34,11 +34,11 @@ namespace BarocertExample.Controllers
             Identity identity = new Identity();
 
             // 수신자 휴대폰번호 - 11자 (하이픈 제외)
-            identity.receiverHP = _kakaocertService.encrypt("01067668440");
+            identity.receiverHP = _kakaocertService.encrypt("01012341234");
             // 수신자 성명 - 80자
-            identity.receiverName = _kakaocertService.encrypt("정우석");
+            identity.receiverName = _kakaocertService.encrypt("홍길동");
             // 수신자 생년월일 - 8자 (yyyyMMdd)
-            identity.receiverBirthday = _kakaocertService.encrypt("19900911");
+            identity.receiverBirthday = _kakaocertService.encrypt("19700101");
 
             // 인증요청 메시지 제목 - 최대 40자
             identity.reqTitle = "본인인증 요청 메시지 제목";
@@ -135,11 +135,11 @@ namespace BarocertExample.Controllers
 
 
             // 수신자 휴대폰번호 - 11자 (하이픈 제외)
-            sign.receiverHP = _kakaocertService.encrypt("01067668440");
+            sign.receiverHP = _kakaocertService.encrypt("01012341234");
             // 수신자 성명 - 80자
-            sign.receiverName = _kakaocertService.encrypt("정우석");
+            sign.receiverName = _kakaocertService.encrypt("홍길동");
             // 수신자 생년월일 - 8자 (yyyyMMdd)
-            sign.receiverBirthday = _kakaocertService.encrypt("19900911");
+            sign.receiverBirthday = _kakaocertService.encrypt("19700101");
 
             // 서명 요청 제목 - 최대 40자
             sign.signTitle = "전자서명(단건) 서명 요청 제목";
@@ -235,11 +235,11 @@ namespace BarocertExample.Controllers
             MultiSign multiSign = new MultiSign();
 
             // 수신자 휴대폰번호 - 11자 (하이픈 제외)
-            multiSign.receiverHP = _kakaocertService.encrypt("01067668440");
+            multiSign.receiverHP = _kakaocertService.encrypt("01012341234");
             // 수신자 성명 - 80자
-            multiSign.receiverName = _kakaocertService.encrypt("정우석");
+            multiSign.receiverName = _kakaocertService.encrypt("홍길동");
             // 수신자 생년월일 - 8자 (yyyyMMdd)
-            multiSign.receiverBirthday = _kakaocertService.encrypt("19900911");
+            multiSign.receiverBirthday = _kakaocertService.encrypt("19700101");
 
             // 인증요청 메시지 제목 - 최대 40자
             multiSign.reqTitle = "전자서명(복수) 요청 메시지 제목";
@@ -352,11 +352,11 @@ namespace BarocertExample.Controllers
             CMS cms = new CMS();
 
             // 수신자 휴대폰번호 - 11자 (하이픈 제외)
-            cms.receiverHP = _kakaocertService.encrypt("01067668440");
+            cms.receiverHP = _kakaocertService.encrypt("01012341234");
             // 수신자 성명 - 80자
-            cms.receiverName = _kakaocertService.encrypt("정우석");
+            cms.receiverName = _kakaocertService.encrypt("홍길동");
             // 수신자 생년월일 - 8자 (yyyyMMdd)
-            cms.receiverBirthday = _kakaocertService.encrypt("19900911");
+            cms.receiverBirthday = _kakaocertService.encrypt("19700101");
 
             // 인증요청 메시지 제목 - 최대 40자
             cms.reqTitle = "출금동의 요청 메시지 제목";

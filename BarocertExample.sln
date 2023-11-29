@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KakaocertExample", "Kakaoce
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PasscertExample", "PasscertExample\PasscertExample.csproj", "{2D979D9F-5039-40F2-B870-1678B8C53FCF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NavercertExample", "NavercertExample\NavercertExample.csproj", "{CAA60A44-9392-47BE-A35C-E9850AF15CBE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NavercertExample", "NavercertExample\NavercertExample.csproj", "{CAA60A44-9392-47BE-A35C-E9850AF15CBE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

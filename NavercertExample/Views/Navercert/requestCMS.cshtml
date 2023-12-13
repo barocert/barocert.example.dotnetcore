@@ -1,0 +1,16 @@
+﻿@{
+	ViewBag.Title = "네이버 출금동의 요청";
+}
+
+<div id="content">
+	<p class="heading1">Result</p>
+	<br />
+	<fieldset class="fieldset1">
+		<legend>@ViewData["Title"]</legend>
+		<ul>
+			<li>ReceiptID (접수아이디) : @Model.receiptID</li>
+			<li>Scheme (앱스킴) : @Model.scheme</li>
+			<li>MarketURL (앱다운로드URL) : @Model.marketUrl</li>
+		</ul>
+	</fieldset>
+</div>

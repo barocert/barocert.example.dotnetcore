@@ -57,7 +57,7 @@ namespace BarocertExample.Controllers
             identity.receiverInfoYN = true;
 
             // AppToApp 인증요청 여부
-            // true - AppToApp 인증방식, false - Push 인증방식
+            // true - AppToApp 인증방식, false - 푸시(Push) 인증방식
             identity.appUseYN = false;
             // ApptoApp 인증방식에서 사용
             // 통신사 유형('SKT', 'KT', 'LGU'), 대문자 입력(대소문자 구분)
@@ -190,7 +190,7 @@ namespace BarocertExample.Controllers
             sign.originalFormatCode = "HTML";
 
             // AppToApp 인증요청 여부
-            // true - AppToApp 인증방식, false - Push 인증방식
+            // true - AppToApp 인증방식, false - 푸시(Push) 인증방식
             sign.appUseYN = false;
             // ApptoApp 인증방식에서 사용
             // 통신사 유형('SKT', 'KT', 'LGU'), 대문자 입력(대소문자 구분)
@@ -319,7 +319,7 @@ namespace BarocertExample.Controllers
             cms.receiverInfoYN = true;
 
             // AppToApp 인증요청 여부
-            // true - AppToApp 인증방식, false - Push 인증방식
+            // true - AppToApp 인증방식, false - 푸시(Push) 인증방식
             cms.appUseYN = false;
             // ApptoApp 인증방식에서 사용
             // 통신사 유형('SKT', 'KT', 'LGU'), 대문자 입력(대소문자 구분)
@@ -436,7 +436,7 @@ namespace BarocertExample.Controllers
             login.receiverInfoYN = true;
 
             // AppToApp 인증요청 여부
-            // true - AppToApp 인증방식, false - Push 인증방식
+            // true - AppToApp 인증방식, false - 푸시(Push) 인증방식
             login.appUseYN = false;
             // ApptoApp 인증방식에서 사용
             // 통신사 유형('SKT', 'KT', 'LGU'), 대문자 입력(대소문자 구분)

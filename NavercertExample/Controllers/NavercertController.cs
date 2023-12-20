@@ -46,7 +46,7 @@ namespace BarocertExample.Controllers
             identity.expireIn = 1000;
 
             // AppToApp 인증요청 여부
-            // true - AppToApp 인증방식, false - Talk Message 인증방식
+            // true - AppToApp 인증방식, false - 푸시(Push) 인증방식
             identity.appUseYN = false;
             // ApptoApp 인증방식에서 사용
             // 모바일장비 유형('ANDROID', 'IOS'), 대문자 입력(대소문자 구분)
@@ -158,7 +158,7 @@ namespace BarocertExample.Controllers
 
 
             // AppToApp 인증요청 여부
-            // true - AppToApp 인증방식, false - Talk Message 인증방식
+            // true - AppToApp 인증방식, false - 푸시(Push) 인증방식
             sign.appUseYN = false;
             // ApptoApp 인증방식에서 사용
             // 모바일장비 유형('ANDROID', 'IOS'), 대문자 입력(대소문자 구분)
@@ -285,7 +285,7 @@ namespace BarocertExample.Controllers
             multiSign.addToken(token2);
 
             // AppToApp 인증요청 여부
-            // true - AppToApp 인증방식, false - Talk Message 인증방식
+            // true - AppToApp 인증방식, false - 푸시(Push) 인증방식
             multiSign.appUseYN = false;
             // ApptoApp 인증방식에서 사용
             // 모바일장비 유형('ANDROID', 'IOS'), 대문자 입력(대소문자 구분)
@@ -397,7 +397,7 @@ namespace BarocertExample.Controllers
             cms.bankAccountBirthday = _navercertService.encrypt("19700101");
 
             // AppToApp 인증요청 여부
-            // true - AppToApp 인증방식, false - Talk Message 인증방식
+            // true - AppToApp 인증방식, false - 푸시(Push) 인증방식
             cms.appUseYN = false;
             // ApptoApp 인증방식에서 사용
             // 모바일장비 유형('ANDROID', 'IOS'), 대문자 입력(대소문자 구분)

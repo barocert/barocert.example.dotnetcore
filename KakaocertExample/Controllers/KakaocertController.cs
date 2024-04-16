@@ -34,11 +34,11 @@ namespace BarocertExample.Controllers
             Identity identity = new Identity();
 
             // 수신자 휴대폰번호 - 11자 (하이픈 제외)
-            identity.receiverHP = _kakaocertService.encrypt("01012341234");
+            identity.receiverHP = _kakaocertService.encrypt("01067668440");
             // 수신자 성명 - 80자
-            identity.receiverName = _kakaocertService.encrypt("홍길동");
+            identity.receiverName = _kakaocertService.encrypt("정우석");
             // 수신자 생년월일 - 8자 (yyyyMMdd)
-            identity.receiverBirthday = _kakaocertService.encrypt("19700101");
+            identity.receiverBirthday = _kakaocertService.encrypt("19900911");
 
             // 인증요청 메시지 제목 - 최대 40자
             identity.reqTitle = "본인인증 요청 메시지 제목";

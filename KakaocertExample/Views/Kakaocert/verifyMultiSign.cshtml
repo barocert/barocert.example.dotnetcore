@@ -3,7 +3,7 @@
 }
 
 <div id="content">
-	<p class="heading1">Result</p>
+	<p class="heading1">Response</p>
 	<br />
 	<fieldset class="fieldset1">
 		<legend>@ViewData["Title"]</legend>
@@ -19,6 +19,10 @@
 			}
 
 			<li>Ci (연계정보) : @Model.ci</li>
+			<li>ReceiverName (수신자 성명) : @Model.receiverName</li>
+			<li>ReceiverYear (수신자 출생년도) : @Model.receiverYear</li>
+			<li>ReceiverDay (수신자 출생월일) : @Model.receiverDay</li>
+			<li>ReceiverHP (수신자 휴대폰번호) : @Model.receiverHP</li>
 		</ul>
 	</fieldset>
 </div>

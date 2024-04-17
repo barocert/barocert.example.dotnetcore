@@ -5,7 +5,7 @@
 
 
 #### install .NET CLI
-    $ dotnet add package Barocert --version 1.3.0
+    $ dotnet add package Barocert --version 1.4.0
     $ dotnet add package Linkhub --version 1.6.0
 
 사이트
